@@ -1,0 +1,17 @@
+{
+  "description": "On session start, warn when the installed skill set changed and now contains conflicts. Requires the skillclash CLI on PATH.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "skillclash audit --changed-only --quiet",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

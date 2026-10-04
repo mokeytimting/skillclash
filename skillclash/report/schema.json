@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SkillclashScanResult",
+  "type": "object",
+  "required": ["tool", "version", "generated_at", "units", "skills", "findings", "stats"],
+  "properties": {
+    "tool": { "type": "string", "const": "skillclash" },
+    "version": { "type": "string" },
+    "generated_at": { "type": "string" },
+    "args": { "type": "object" },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "label", "origin", "namespaced", "inferred", "skill_count", "warnings"],
+        "properties": {
+          "id": { "type": "string" },
+          "kind": { "type": "string" },
+          "label": { "type": "string" },
+          "origin": { "type": "string" },
+          "namespaced": { "type": "boolean" },
+          "inferred": { "type": "boolean" },
+          "skill_count": { "type": "integer" },
+          "warnings": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "qualified_name", "unit_id", "path", "model_invocable", "description", "listing_tokens_est"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "qualified_name": { "type": "string" },
+          "unit_id": { "type": "string" },
+          "path": { "type": "string" },
+          "model_invocable": { "type": "boolean" },
+          "description": { "type": "string" },
+          "listing_tokens_est": { "type": "integer" }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["fingerprint", "rule", "severity", "title", "message", "skills", "evidence", "confidence", "source"],
+        "properties": {
+          "fingerprint": { "type": "string" },
+          "rule": { "type": "string" },
+          "severity": { "type": "string", "enum": ["error", "warn", "info"] },
+          "title": { "type": "string" },
+          "message": { "type": "string" },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["skill_id", "name", "unit_id", "path"],
+              "properties": {
+                "skill_id": { "type": "string" },
+                "name": { "type": "string" },
+                "unit_id": { "type": "string" },
+                "path": { "type": "string" },
+                "line": { "type": ["integer", "null"] },
+                "quote": { "type": ["string", "null"] }
+              }
+            }
+          },
+          "evidence": { "type": "object" },
+          "confidence": { "type": "number" },
+          "source": { "type": "string" },
+          "fix": { "type": ["string", "null"] },
+          "suppressed_by": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "required": ["counts_by_severity", "counts_by_rule", "overlap_pairs_total", "overlap_clusters", "listing_tokens_est_total"],
+      "properties": {
+        "counts_by_severity": { "type": "object" },
+        "counts_by_rule": { "type": "object" },
+        "overlap_pairs_total": { "type": "integer" },
+        "overlap_clusters": { "type": "array" },
+        "listing_tokens_est_total": { "type": "integer" },
+        "listing_tokens_est_by_unit": { "type": "object" },
+        "dismissed_by_llm": { "type": "array" },
+        "route_matrix": { "type": "object" },
+        "llm": { "type": "object" },
+        "timing_ms": { "type": "object" }
+      }
+    }
+  }
+}

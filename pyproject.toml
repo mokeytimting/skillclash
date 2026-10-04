@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillclash"
+version = "0.1.0"
+description = "Find conflicts, overlaps and duplicates between AI agent skills (Claude Code / Agent Skills)"
+readme = "README.md"
+authors = [{ name = "mokeytimting" }]
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "PyYAML>=6.0",
+]
+keywords = ["claude-code", "agent-skills", "skills", "lint", "llm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://github.com/mokeytimting/skillclash"
+Issues = "https://github.com/mokeytimting/skillclash/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.3",
+]
+
+[project.scripts]
+skillclash = "skillclash.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["skillclash*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -m 'not network'"
+markers = [
+    "network: tests requiring internet connectivity (run with: pytest -m network)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [
+    ".packages",
+    ".cache",
+    ".tmp",
+    ".venv",
+    "dist",
+    "build",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]

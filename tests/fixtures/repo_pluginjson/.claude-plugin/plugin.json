@@ -1,0 +1,6 @@
+{
+  "name": "helper-plugin",
+  "version": "1.0.0",
+  "description": "A plugin configured with plugin.json",
+  "skills": ["./skills/helper"]
+}

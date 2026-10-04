@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "skillclash",
+  "owner": { "name": "mokeytimting" },
+  "metadata": {
+    "description": "skillclash: conflict and overlap checks for agent skills"
+  },
+  "plugins": [
+    {
+      "name": "skillclash",
+      "source": "./plugin",
+      "description": "Find conflicts, overlaps and duplicates between your installed agent skills."
+    }
+  ]
+}

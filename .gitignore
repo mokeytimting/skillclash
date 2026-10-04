@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.ruff_cache/
+.pytest_cache/
+pytest-cache-files-*/
+
+# Local tooling and caches
+.packages/
+.cache/
+.tmp/
+skillclash.cmd
+
+# Generated output
+site/
+skillclash-report.html
+docs/corpus-report.html
+
+# Not part of the project
+GEMINI.md
+czoom-output/

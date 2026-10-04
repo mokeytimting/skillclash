@@ -1,0 +1,24 @@
+{
+  "name": "test-marketplace",
+  "owner": { "name": "Tester" },
+  "plugins": [
+    {
+      "name": "local-doc",
+      "source": "./plugins/local-doc"
+    },
+    {
+      "name": "self-plugin",
+      "source": {
+        "source": "github",
+        "repo": "owner/repo_marketplace"
+      }
+    },
+    {
+      "name": "unsupported-plugin",
+      "source": {
+        "source": "ftp",
+        "url": "ftp://example.com"
+      }
+    }
+  ]
+}

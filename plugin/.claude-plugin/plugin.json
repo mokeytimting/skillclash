@@ -1,0 +1,10 @@
+{
+  "name": "skillclash",
+  "version": "0.1.0",
+  "description": "Find conflicts, overlaps and duplicates between your installed agent skills.",
+  "author": { "name": "mokeytimting" },
+  "homepage": "https://github.com/mokeytimting/skillclash",
+  "repository": "https://github.com/mokeytimting/skillclash",
+  "license": "MIT",
+  "keywords": ["skills", "conflicts", "lint", "agent-skills"]
+}

@@ -1,0 +1,46 @@
+# Skill packs tracked by the ecosystem map (skillclash ecosystem build).
+# name: label shown on the site; origin: any skillclash source spec.
+
+[[packs]]
+name = "anthropics/skills"
+origin = "gh:anthropics/skills"
+
+[[packs]]
+name = "obra/superpowers"
+origin = "gh:obra/superpowers"
+
+[[packs]]
+name = "mattpocock/skills"
+origin = "gh:mattpocock/skills"
+
+[[packs]]
+name = "addyosmani/agent-skills"
+origin = "gh:addyosmani/agent-skills"
+
+[[packs]]
+name = "alirezarezvani/claude-skills"
+origin = "gh:alirezarezvani/claude-skills"
+
+[[packs]]
+name = "affaan-m/ECC"
+origin = "gh:affaan-m/ECC"
+
+[[packs]]
+name = "garrytan/gstack"
+origin = "gh:garrytan/gstack"
+
+[[packs]]
+name = "pbakaus/impeccable"
+origin = "gh:pbakaus/impeccable"
+
+[[packs]]
+name = "DietrichGebert/ponytail"
+origin = "gh:DietrichGebert/ponytail"
+
+[[packs]]
+name = "JuliusBrussee/caveman"
+origin = "gh:JuliusBrussee/caveman"
+
+[[packs]]
+name = "thedotmack/claude-mem"
+origin = "gh:thedotmack/claude-mem"
