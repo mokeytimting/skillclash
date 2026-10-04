@@ -97,6 +97,10 @@ MESSAGES: dict[str, dict[str, str]] = {
         "en": "A symlink stored by git as a text file points to a missing target.",
     },
     "rule.NAME-CLASH.title": {"zh-TW": "同名 skill", "en": "Skill name clash"},
+    "rule.NAME-CLASH.desc": {
+        "zh-TW": "兩個 skill 同名。都沒有命名空間時，低優先的一份會被遮蔽（個人 > 專案）；至少一方是 plugin 時，兩份都會出現在清單上讓模型猜。",
+        "en": "Two skills share a name. Without namespaces the lower-priority copy is shadowed (personal beats project); if either is a plugin skill, both are listed and the model has to guess.",
+    },
     "rule.DUP-CONTENT.title": {"zh-TW": "內容重複收錄", "en": "Duplicate skill content"},
     "rule.DUP-CONTENT.desc": {
         "zh-TW": "名稱不同但內文幾乎相同（Jaccard ≥ 0.90），可能是改名後重複收錄。",
